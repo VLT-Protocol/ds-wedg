@@ -47,7 +47,6 @@ contract WEDG9Test is DSTest, WEDGEvents {
     }
 
     function test_join() public {
-        expectEventsExact    (address(wedg));
 
         perform_join         (a, 3 finney);
         assert_wedg_balance  (a, 3 finney);
@@ -84,7 +83,6 @@ contract WEDG9Test is DSTest, WEDGEvents {
     }
 
     function test_exit() public {
-        expectEventsExact    (address(wedg));
 
         perform_join         (a, 7 finney);
         assert_wedg_balance  (a, 7 finney);
@@ -110,7 +108,6 @@ contract WEDG9Test is DSTest, WEDGEvents {
     }
 
     function test_transfer() public {
-        expectEventsExact    (address(wedg));
 
         perform_join         (a, 7 finney);
         perform_transfer     (a, 3 finney, b);
@@ -130,7 +127,6 @@ contract WEDG9Test is DSTest, WEDGEvents {
     }
 
     function test_transferFrom() public {
-        expectEventsExact    (address(this));
 
         perform_join         (a, 7 finney);
         perform_approval     (a, 5 finney, b);
